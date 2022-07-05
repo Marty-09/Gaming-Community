@@ -10,7 +10,7 @@ client.on("ready", () => {
 })
 
 client.on("messageCreate", (message) => {
-    if(message.content == "€risolviilcubo") {
+    if(message.content == "€risolvicubo") {
         message.channel.send("Ecco:https://media4.giphy.com/media/2CV88JdrUCOYT5Ec8j/giphy.gif")
     }
 
