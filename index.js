@@ -22,12 +22,12 @@ client.on("messageCreate", message => {
     var trovata = false;
 
     parolacce.forEach(parola => {
-        if(message.content.includes(parola)) {
+        if( message.content.includes(parola)) {
             trovata = true;
         }
     })
 
-    if(trovata) {
+    if (trovata) {
         message.delete();
         var embed = new Discord.MessageEmbed()
             .setTitle("Hai detto una parolaccia!")
