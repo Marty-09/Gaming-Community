@@ -20,10 +20,12 @@ client.on("ready", () => {
 client.on("messageCreate", message => {
     var parolacce = ["cazzo", "merda", "stronzo", "coglione"]
     var trovata = false;
+    var testo = message.content;
 
     parolacce.forEach(parola => {
-        if ( message.content.includes(parola)) {
+        if (message.content.includes(parola)) {
             trovata = true;
+            testo = testo.replace(eval(`/${parola}/g`), "###");
         }
     })
 
@@ -31,7 +33,7 @@ client.on("messageCreate", message => {
         message.delete();
         var embed = new Discord.MessageEmbed()
             .setTitle("Hai detto una parolaccia")
-            .setDescription("Non dovevi dire queste parole ora smettila, potresti infastidire qualcuno")
+            .setDescription("Hai scritto un messaggio con parole bloccate\rIl tuo messaggo: " + testo)
 
         message.channel.send({ embeds: [embed] })    
     }
