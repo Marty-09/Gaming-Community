@@ -23,7 +23,7 @@ client.on("messageCreate", message => {
 
     parolacce.forEach(parola => {
         if(message.content.includes(parola)) {
-            trovata =true;
+            trovata = true;
         }
     })
 
